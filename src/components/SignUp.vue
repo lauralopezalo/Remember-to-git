@@ -20,17 +20,24 @@
           <input
             id="password"
             name="password"
-            type="text"
+            type="password"
+            placeholder="*******"
+           
+          />
+        </div>
+        <div class="form-fields">
+          <label for="repeat-password">Repeat password</label>
+          <input
+            id="repeat-password"
+            name="repeat-password"
+            type="password"
             placeholder="*******"
           />
         </div>
         <div class="form-fields">
           <button class="signIn" name="commit" type="submit">Sign In</button>
         </div>
-        <p>
-          Don't have an account?
-          <PersonalRouter :route="route" :buttonText="buttonText" />
-        </p>
+        
       </div>
     </form>
 </template>

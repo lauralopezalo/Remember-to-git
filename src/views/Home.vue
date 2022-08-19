@@ -1,6 +1,6 @@
 <template>
   <div>This is Home component</div>
-  <Nav />
+
    <router-view></router-view>
 </template>
 

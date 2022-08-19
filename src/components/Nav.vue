@@ -1,8 +1,11 @@
 <template>
-  <div>Nav Component</div>
+  <div>Temporary navbar to work</div>
    <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/auth/login">Sign In</router-link> |
+    <router-link to="/auth/sign-up">Sign Up</router-link> |
+    <router-link to="/newtask">New task</router-link> |
+    <router-link to="/taskitem">Task Item</router-link>
   </nav>
 </template>
 
