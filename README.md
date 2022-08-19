@@ -11,6 +11,16 @@ CSS frameworks as liking like tailwindCSS, Bootstrap, MaterialUI will be used.
 - Read documentation and resources
 - Git init
 
+**19/08**
+- Review and clarify concepts
+- Outline the design of the app and the content
+
+**22/08**
+
+**23/08**
+
+**24/08**
+
 ## Important
 This app is not setUp to be deployed to a production environment like vercel or netlify. 
 

@@ -1,8 +1,14 @@
 <template>
-  <div>hello</div>
+  <div>This is Home component</div>
+  <Nav />
+   <router-view></router-view>
 </template>
 
-<script setup></script>
+<script setup>
+import Nav from '../components/Nav.vue';
+
+
+</script>
 
 <style></style>
 

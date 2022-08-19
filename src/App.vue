@@ -4,6 +4,7 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import { ref } from "vue";
+import Home from './views/Home.vue';
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -29,6 +30,8 @@ onMounted(async () => {
 
 <template>
   <div>
+    <Home />
+    
     <router-view />
   </div>
 </template>
