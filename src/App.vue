@@ -4,11 +4,14 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import { ref } from "vue";
-import Nav from './components/Nav.vue';
+import Nav from "./components/Nav.vue";
+import { supabase } from "./supabase.js";
 
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
+
+components:{Nav};
 
 onMounted(async () => {
   const appReady = ref(null);
@@ -20,7 +23,7 @@ onMounted(async () => {
       router.push({ path: "/auth/login" });
     } else {
       // continue to dashboard
-      // router.push({ path: "/" });
+      router.push({ path: "/" });
     }
   } catch (e) {
     console.log(e);
@@ -30,8 +33,8 @@ onMounted(async () => {
 
 <template>
   <div>
-<Nav />
-    
+    <Nav />
+
     <router-view />
   </div>
 </template>

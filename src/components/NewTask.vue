@@ -1,25 +1,52 @@
 <template>
   <div>New Task Component</div>
-  <form @submit.prevent="addTask" class="">
-    <div class="">
-      <label for="">Task</label> 
-      <input type="text" placeholder="Add a task" v-model="title" />
-    </div>
-    <div class="">
-      <label for="">Description</label>
-      <input
-        type="text"
-        name="day"
-        placeholder="Add a description"
-        v-model="description"
-      />
-    </div>
-    <!-- <div class="form-control">
+  <!-- div que justifica en el centro todo el contenido -->
+  <div class="flex justify-center items-baseline h-full pt-4 sm:p-16">
+    <!-- 2 div que organiza en vertical todos los componentes -->
+    <div
+      class="w-[30rem] h-full m-4 relative py-16 px-14 bg-white shadow-md border-none rounded-3xl"
+    >
+      <div class="w-full mb-12">
+        <!-- Título To Do List e icono -->
+        <div>
+          <h1 class="text-3xl text-gray-800 mb-5 font-bold text-center">
+            Add a new task
+          </h1>
+        </div>
+
+        <div>
+          <form @submit.prevent="addTask" class="space-y-6">
+            <div class="w-full flex flex-col">
+              <input
+                class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
+                type="text"
+                placeholder="Add a task"
+                v-model="title"
+              />
+
+              <input
+                type="text"
+                name="day"
+                placeholder="Add a description"
+                v-model="description"
+                class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
+              />
+
+              <!-- <div class="form-control">
       <label for="">Set Reminder</label>
       <input type="checkbox" name="reminder" v-model="reminder" />
     </div> -->
-    <input type="submit" value="Save Task" class="btn btn-block" />
-  </form>
+              <button
+                type="submit"
+                value="Save"
+                class="w-full text-white bg-violet-700 hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:shadow-lg font-medium rounded-lg text-sm px-5 py-3 text-center mb-2"
+              >Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -42,25 +69,30 @@ import { useRouter } from "vue-router";
 import { useTaskStore } from "../stores/task";
 import { storeToRefs } from "pinia";
 
-components: {
-  useRouter, useTaskStore;
-}
-
+const store = useTaskStore();
 const title = ref("");
 const description = ref("");
-// const reminder = ref(Boolean);
+//const reminder = ref(Boolean);
 const errorMsg = ref("");
 const redirect = useRouter();
 
 const addTask = async () => {
-  try {
-    await useTaskStore().addTask(title.value, description.value);
-    redirect.push({ path: "/newtask" });
-  } catch (error) {
+  if (title.value === "") {
     errorMsg.value = `Error: ${error.message}`;
     setTimeout(() => {
       errorMsg.value = null;
     }, 5000);
+  } else {
+    try {
+      await useTaskStore().addTask(title.value, description.value);
+      title.value = null;
+      description.value = null;
+    } catch (error) {
+      errorMsg.value = `Error: ${error.message}`;
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    }
   }
 };
 </script>

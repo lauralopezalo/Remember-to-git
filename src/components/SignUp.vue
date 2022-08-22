@@ -102,7 +102,7 @@ import { storeToRefs } from "pinia";
 const route = "/auth/login";
 const buttonText = "Log In";
 
-//const user = useUserStore();
+const user = useUserStore();
 
 // Input Fields
 const email = ref("");

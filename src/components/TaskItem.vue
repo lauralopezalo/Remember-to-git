@@ -1,13 +1,18 @@
 <template>
-  <div>Task Item Component</div>
+  <h1>Task Item Component</h1>
+  
+
+
+  
 </template>
 
-<script setup>
+ <script setup>
 // const emit = defineEmits([
 //   ENTER-EMITS-HERE
 // ])
 
 // const props = defineProps(["ENTER-PROP-HERE"]);
+
 </script>
 
 <style></style>

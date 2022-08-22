@@ -49,6 +49,7 @@
                 name="password"
                 type="password"
                 placeholder="*******"
+                required
                 class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
               />
             </div>

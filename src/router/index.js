@@ -16,16 +16,15 @@ const routes = [
       { path: "sign-up", component: SignUp },
     ],
   },
-   { path: "/", component: Home },
-   {
-     path: "/newtask",
-     
-     component: NewTask,
-   },
-   {
-     path: '/taskitem',
-     component: TaskItem,
-   },
+  { path: "/", component: Home },
+  {
+    path: "/newtask",
+    component: NewTask,
+  },
+  {
+    path: "/taskitem",
+    component: TaskItem,
+  },
 ];
 const router = createRouter({
   history: createWebHistory(),
