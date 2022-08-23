@@ -16,9 +16,11 @@ CSS frameworks as liking like tailwindCSS, Bootstrap, MaterialUI will be used.
 - Outline the design of the app and the content
 
 **22/08**
-- Store data en Supabase
+- Log In, Sign Up and Log out. Html, style and functionality
 
 **23/08**
+- Add and fetch tasks
+- 
 
 **24/08**
 
