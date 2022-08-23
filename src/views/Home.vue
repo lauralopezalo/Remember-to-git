@@ -1,17 +1,34 @@
 <template>
   <div>This is Home component</div>
-<Nav />
-<NewTask />
-<TaskItem />
-<Footer />
-   <router-view></router-view>
+  <div class=""></div>
+  <Nav />
+  <NewTask @add-task="addNewTask" />
+  <TaskItem :tasks="taskStore.tasks" />
+  <Footer />
+  <router-view></router-view>
 </template>
 
 <script setup>
+import { ref, computed } from "vue";
+import PersonalRouter from "../components/PersonalRouter.vue";
+import { supabase } from "../supabase";
+import { useRouter } from "vue-router";
+import { useTaskStore } from "../stores/task";
+import { storeToRefs } from "pinia";
+
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
+
+const taskStore = useTaskStore();
+
+taskStore.fetchTasks();
+
+async function addNewTask(task) {
+  await taskStore.addTask(task.title, task.description);
+  taskStore.fetchTasks();
+}
 
 </script>
 

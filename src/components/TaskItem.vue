@@ -1,18 +1,29 @@
 <template>
   <h1>Task Item Component</h1>
-  
-
-
-  
+  <div v-for="(task, index) in tasks" :key="index">
+    <div>{{ task.title }}</div>
+    <div>{{ task.description }}</div>
+    <i
+      @click="$emit('showFunc')"
+      class="fa-solid fa-trash-can text-red-500 mr-4 cursor-pointer"
+    ></i>
+    <i
+      @click="$emit('edit')"
+      class="fa-solid fa-pen-to-square text-green-500 cursor-pointer"
+    ></i>
+  </div>
 </template>
 
- <script setup>
-// const emit = defineEmits([
-//   ENTER-EMITS-HERE
-// ])
+<script setup>
+import { ref } from "vue";
+import { useTaskStore } from "../stores/task";
 
-// const props = defineProps(["ENTER-PROP-HERE"]);
+const taskStore = useTaskStore();
+// const emit = defineEmits([])
 
+const props = defineProps({ tasks: Array });
+const title = ref("");
+const description = ref("");
 </script>
 
 <style></style>

@@ -4,7 +4,7 @@ import { useUserStore } from "./user";
 
 export const useTaskStore = defineStore("tasks", {
   state: () => ({
-    tasks: [{ title: null, description: null }],
+    tasks: null,
   }),
   actions: {
     async fetchTasks() {
