@@ -14,7 +14,7 @@
           </h1>
         </div>
 
-        <div class="w-full flex flex-row">
+        <div class="w-full flex flex-row"> 
           <form @submit.prevent="addTask" class="space-y-6">
             <div >
               <div class="w-full flex flex-col">
@@ -34,10 +34,10 @@
                 />
               </div>
 
-              <div class="form-control">
+              <!-- <div class="form-control">
                 <label for="">Set Reminder</label>
                 <input type="checkbox" name="reminder" v-model="reminder" />
-              </div>
+              </div> -->
               <div v-if="showError">{{ errorMsg }}</div>
               <button
                 @click="pushNewTask"

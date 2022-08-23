@@ -3,7 +3,8 @@
   <div class=""></div>
   <Nav />
   <NewTask @add-task="addNewTask" />
-  <TaskItem :tasks="taskStore.tasks" />
+  <TaskItem :tasks="taskStore.tasks"  @delete-task="deleteOneTask"/>
+  <!-- @edit-task="edit" -->
   <Footer />
   <router-view></router-view>
 </template>
@@ -27,6 +28,16 @@ taskStore.fetchTasks();
 
 async function addNewTask(task) {
   await taskStore.addTask(task.title, task.description);
+  taskStore.fetchTasks();
+}
+
+// async function edit(task) {
+//   await taskStore.editTask(task.title, task.description, task.id);
+//   taskStore.fetchTasks();
+// }
+
+async function deleteOneTask(task){
+  await taskStore.deleteTask(task.id);
   taskStore.fetchTasks();
 }
 

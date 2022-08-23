@@ -1,16 +1,24 @@
 <template>
   <h1>Task Item Component</h1>
-  <div v-for="(task, index) in tasks" :key="index">
-    <div>{{ task.title }}</div>
-    <div>{{ task.description }}</div>
-    <i
-      @click="$emit('showFunc')"
-      class="fa-solid fa-trash-can text-red-500 mr-4 cursor-pointer"
-    ></i>
-    <i
-      @click="$emit('edit')"
-      class="fa-solid fa-pen-to-square text-green-500 cursor-pointer"
-    ></i>
+  <div
+    v-for="(task, index) in tasks"
+    :key="index"
+    class="bg-gray-100 antialiased"
+  >
+    <div class="flex items-center justify-center h-full">
+      <div class="bg-white shadow-2xl p-6 rounded-2xl border-2 border-gray-50">
+        <div>{{ task.title }}</div>
+        <div>{{ task.description }}</div>
+        <i
+          @click="deleteTask(task.id)"
+          class="fa-solid fa-trash-can text-red-500 mr-4 cursor-pointer"
+        ></i>
+        <i
+          @click="$emit('edit')"
+          class="fa-solid fa-pen-to-square text-green-500 cursor-pointer"
+        ></i>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,10 +28,26 @@ import { useTaskStore } from "../stores/task";
 
 const taskStore = useTaskStore();
 // const emit = defineEmits([])
+const emit = defineEmits(["delete-task"]);
 
-const props = defineProps({ tasks: Array });
+const list = defineProps({ tasks: Array });
 const title = ref("");
 const description = ref("");
+
+const deleteTask = (id) => {
+  const deleteThis = list.tasks.filter((task) => task.id === id);
+  emit('delete-task', deleteThis[0]);
+};
+
+
+// const editTask = {
+//   title: title.value,
+//   description: description.value,
+// };
+
+// emit("edit-task", editTask);
+// title.value = "";
+// description.value = "";
 </script>
 
 <style></style>
