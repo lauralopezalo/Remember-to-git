@@ -1,16 +1,53 @@
 <template>
-  <div v-if="editForm == false">
-    <div class="bg-white shadow-2xl p-6 rounded-2xl border-2 border-gray-50">
-      <div>{{ task.title }}</div>
-      <div>{{ task.description }}</div>
-      <i
-        @click="deleteTask(task.id)"
-        class="fa-solid fa-trash-can text-red-500 mr-4 cursor-pointer"
-      ></i>
-      <i
-        @click="editFormValue()"
-        class="fa-solid fa-pen-to-square text-green-500 cursor-pointer"
-      ></i>
+  <div v-if="editForm == false" class="">
+    <div
+      v-if="is_complete == false"
+      class="bg-white rounded-lg p-10 pb-0 grid grid-rows-3 gap-4"
+    >
+      <div class="text-xl text-gray-800 font-bold min-h-fit sm:h-10 md:h-10 lg:h-10">
+        {{ task.title }}
+      </div>
+      <div class="text-base text-gray-800 font-normal min-h-fit sm:h-40 md:h-30 lg:h-40">
+        {{ task.description }}
+      </div >
+      <div class="flex flex-row justify-evenly items-center h-10">
+        
+          <i
+            @click="toggleTask(task.id)"
+            class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl "
+          ></i>
+       
+          <i
+            @click="editFormValue()"
+            class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
+          ></i>
+       
+          <i
+            @click="deleteTask(task.id)"
+            class="fa-regular fa-trash-can text-red-500 mr-4 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
+          ></i>
+       
+      </div>
+    </div>
+    <div v-else class="bg-white rounded-lg p-12  text-gray-500">
+      <div class="text-xl text-gray-500 font-bold mb-2 line-through">{{ task.title }}</div>
+      <div class="text-base text-gray-400 font-normal line-through">
+        {{ task.description }}
+      </div>
+      <div class="flex flex-row justify-evenly items-center h-10">
+        <i
+          @click="toggleTask(task.id)"
+          class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl "
+        ></i>
+        <i
+          @click="editFormValue()"
+          class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
+        ></i>
+        <i
+          @click="deleteTask(task.id)"
+          class="fa-regular fa-trash-can text-red-500 mr-4 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
+        ></i>
+      </div>
     </div>
   </div>
   <div v-if="editForm == true">
@@ -31,7 +68,7 @@
       />
       <i
         @click="editTask(task.id)"
-        class="fa-solid fa-pen-to-square text-green-500 cursor-pointer"
+        class="fa-solid fa-pen-to-square text-blue-500 cursor-pointer"
       ></i>
     </div>
   </div>
@@ -46,10 +83,16 @@ const props = defineProps({ task: Object });
 
 const editForm = ref(false);
 
-const title = ref("");
-const description = ref("");
 const newTitle = ref("");
 const newDescription = ref("");
+
+const is_complete = ref("");
+
+const toggleTask = async (id) => {
+  is_complete.value = !is_complete.value;
+  await taskStore.toggleTask(is_complete.value, id);
+  useTaskStore().fetchTasks();
+};
 
 const deleteTask = async (id) => {
   await taskStore.deleteTask(id);
