@@ -10,7 +10,7 @@
         <div class="w-full mb-6 flex justify-center items-center">
           <div>
             <h1 class="text-6xl text-gray-800 mb-5 font-bold text-center">
-              TaskApp
+              git-remember
             </h1>
             <h3
               class="text-lg font-medium text-gray-900 py-3 tracking-wide text-center"

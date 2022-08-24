@@ -2,42 +2,46 @@
   <div v-if="editForm == false" class="">
     <div
       v-if="is_complete == false"
-      class="bg-white rounded-lg p-10 pb-0 grid grid-rows-3 gap-4"
+      class="bg-white shadow-md rounded-lg p-10 pb-0 grid grid-rows-3 gap-4 min-h-fit sm:h-96 md:h-80 lg:h-96"
     >
-      <div class="text-xl text-gray-800 font-bold min-h-fit sm:h-10 md:h-10 lg:h-10">
+      <div
+        class="text-xl text-gray-800 font-bold min-h-fit sm:h-24 md:h-24 lg:h-20 bg-blue-300 m-0" 
+      >
         {{ task.title }}
       </div>
-      <div class="text-base text-gray-800 font-normal min-h-fit sm:h-40 md:h-30 lg:h-40">
+      <div
+        class="text-base text-gray-800 font-normal min-h-fit sm:h-40 md:h-30 lg:h-40 bg-blue-300"
+      >
         {{ task.description }}
-      </div >
-      <div class="flex flex-row justify-evenly items-center h-10">
-        
-          <i
-            @click="toggleTask(task.id)"
-            class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl "
-          ></i>
-       
-          <i
-            @click="editFormValue()"
-            class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
-          ></i>
-       
-          <i
-            @click="deleteTask(task.id)"
-            class="fa-regular fa-trash-can text-red-500 mr-4 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
-          ></i>
-       
+      </div>
+      <div class="flex flex-row justify-evenly items-center h-10 bg-blue-300">
+        <i
+          @click="toggleTask(task.id)"
+          class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl "
+        ></i>
+
+        <i
+          @click="editFormValue()"
+          class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
+        ></i>
+
+        <i
+          @click="deleteTask(task.id)"
+          class="fa-regular fa-trash-can text-red-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
+        ></i>
       </div>
     </div>
-    <div v-else class="bg-white rounded-lg p-12  text-gray-500">
-      <div class="text-xl text-gray-500 font-bold mb-2 line-through">{{ task.title }}</div>
+    <div v-else class="bg-gray-100 rounded-lg p-12 text-gray-500">
+      <div class="text-xl text-gray-500 font-bold mb-2 line-through">
+        {{ task.title }}
+      </div>
       <div class="text-base text-gray-400 font-normal line-through">
         {{ task.description }}
       </div>
       <div class="flex flex-row justify-evenly items-center h-10">
         <i
           @click="toggleTask(task.id)"
-          class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl "
+          class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
         ></i>
         <i
           @click="editFormValue()"
@@ -53,10 +57,11 @@
   <div v-if="editForm == true">
     <div class="w-full flex flex-col">
       <input
-        class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
         type="text"
         placeholder="Add a task"
         v-model="newTitle"
+        maxlength="50"
+        class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
       />
 
       <input
@@ -64,6 +69,7 @@
         name="day"
         placeholder="Add a description"
         v-model="newDescription"
+        maxlength="150"
         class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
       />
       <i

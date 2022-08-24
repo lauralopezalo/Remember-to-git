@@ -1,10 +1,10 @@
 <template>
-<div class="bg-gray-100">
+<div class="bg-gray-50">
   <div>This is Home component</div>
   <div class=""></div>
   <Nav />
   <NewTask @add-task="addNewTask" />
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <div  class=""
     v-for="task in taskStore.tasks"
     :key="task.id"

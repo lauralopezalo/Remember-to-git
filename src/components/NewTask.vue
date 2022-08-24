@@ -14,22 +14,24 @@
           </h1>
         </div>
 
-        <div class="w-full flex flex-row"> 
+        <div class="w-full flex flex-row">
           <form @submit.prevent="addTask" class="space-y-6">
-            <div >
+            <div>
               <div class="w-full flex flex-col">
                 <input
-                  class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
                   type="text"
                   placeholder="Add a task"
                   v-model="title"
+                  maxlength="50"
+                  class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
                 />
 
                 <input
                   type="text"
-                  name="day"
+                  name="description"
                   placeholder="Add a description"
                   v-model="description"
+                  maxlength="150"
                   class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
                 />
               </div>
