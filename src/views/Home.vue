@@ -3,25 +3,31 @@
   <div class=""></div>
   <Nav />
   <NewTask @add-task="addNewTask" />
-  <TaskItem :tasks="taskStore.tasks"  @delete-task="deleteOneTask"/>
-  <!-- @edit-task="edit" -->
+  <div
+    class="flex items-center justify-center h-full"
+    v-for="task in taskStore.tasks"
+    :key="task.id"
+  >
+    <TaskItem :task="task" />
+  </div>
   <Footer />
   <router-view></router-view>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-import PersonalRouter from "../components/PersonalRouter.vue";
+import { ref } from "vue";
+//import PersonalRouter from "../components/PersonalRouter.vue";
 import { supabase } from "../supabase";
-import { useRouter } from "vue-router";
+//import { useRouter } from "vue-router";
 import { useTaskStore } from "../stores/task";
-import { storeToRefs } from "pinia";
+//import { storeToRefs } from "pinia";
 
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
 
+//Muestra la lista de tareas al hacer log in
 const taskStore = useTaskStore();
 
 taskStore.fetchTasks();
@@ -31,16 +37,15 @@ async function addNewTask(task) {
   taskStore.fetchTasks();
 }
 
-// async function edit(task) {
-//   await taskStore.editTask(task.title, task.description, task.id);
+//  async function editOneTask(task) {
+//    await taskStore.editTask(task.title, task.description, task.id);
+//    taskStore.fetchTasks();
+//  }
+
+// async function deleteOneTask(task){
+//   await taskStore.deleteTask(task.id);
 //   taskStore.fetchTasks();
 // }
-
-async function deleteOneTask(task){
-  await taskStore.deleteTask(task.id);
-  taskStore.fetchTasks();
-}
-
 </script>
 
 <style></style>

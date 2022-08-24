@@ -1,23 +1,38 @@
 <template>
-  <h1>Task Item Component</h1>
-  <div
-    v-for="(task, index) in tasks"
-    :key="index"
-    class="bg-gray-100 antialiased"
-  >
-    <div class="flex items-center justify-center h-full">
-      <div class="bg-white shadow-2xl p-6 rounded-2xl border-2 border-gray-50">
-        <div>{{ task.title }}</div>
-        <div>{{ task.description }}</div>
-        <i
-          @click="deleteTask(task.id)"
-          class="fa-solid fa-trash-can text-red-500 mr-4 cursor-pointer"
-        ></i>
-        <i
-          @click="$emit('edit')"
-          class="fa-solid fa-pen-to-square text-green-500 cursor-pointer"
-        ></i>
-      </div>
+  <div v-if="editForm == false">
+    <div class="bg-white shadow-2xl p-6 rounded-2xl border-2 border-gray-50">
+      <div>{{ task.title }}</div>
+      <div>{{ task.description }}</div>
+      <i
+        @click="deleteTask(task.id)"
+        class="fa-solid fa-trash-can text-red-500 mr-4 cursor-pointer"
+      ></i>
+      <i
+        @click="editFormValue()"
+        class="fa-solid fa-pen-to-square text-green-500 cursor-pointer"
+      ></i>
+    </div>
+  </div>
+  <div v-if="editForm == true">
+    <div class="w-full flex flex-col">
+      <input
+        class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
+        type="text"
+        placeholder="Add a task"
+        v-model="newTitle"
+      />
+
+      <input
+        type="text"
+        name="day"
+        placeholder="Add a description"
+        v-model="newDescription"
+        class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
+      />
+      <i
+        @click="editTask(task.id)"
+        class="fa-solid fa-pen-to-square text-green-500 cursor-pointer"
+      ></i>
     </div>
   </div>
 </template>
@@ -27,27 +42,29 @@ import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 
 const taskStore = useTaskStore();
-// const emit = defineEmits([])
-const emit = defineEmits(["delete-task"]);
+const props = defineProps({ task: Object });
 
-const list = defineProps({ tasks: Array });
+const editForm = ref(false);
+
 const title = ref("");
 const description = ref("");
+const newTitle = ref("");
+const newDescription = ref("");
 
-const deleteTask = (id) => {
-  const deleteThis = list.tasks.filter((task) => task.id === id);
-  emit('delete-task', deleteThis[0]);
+const deleteTask = async (id) => {
+  await taskStore.deleteTask(id);
+  taskStore.fetchTasks();
 };
 
+const editTask = async (id) => {
+  await taskStore.editTask(newTitle.value, newDescription.value, id);
+  useTaskStore().fetchTasks();
+  editFormValue();
+};
 
-// const editTask = {
-//   title: title.value,
-//   description: description.value,
-// };
-
-// emit("edit-task", editTask);
-// title.value = "";
-// description.value = "";
+const editFormValue = () => {
+  editForm.value = !editForm.value;
+};
 </script>
 
 <style></style>
