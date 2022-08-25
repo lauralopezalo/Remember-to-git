@@ -4,25 +4,21 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import { ref } from "vue";
-import Nav from "./components/Nav.vue";
+
 import { supabase } from "./supabase.js";
 
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 
-components:{Nav};
-
 onMounted(async () => {
   const appReady = ref(null);
   try {
-    await userStore.fetchUser(); // here we call fetch user
+    await userStore.fetchUser();
     if (!user.value) {
-      // redirect them to logout if the user is not there
       appReady.value = true;
       router.push({ path: "/auth/login" });
     } else {
-      // continue to dashboard
       router.push({ path: "/" });
     }
   } catch (e) {
@@ -33,8 +29,6 @@ onMounted(async () => {
 
 <template>
   <div>
-    <Nav />
-
     <router-view />
   </div>
 </template>

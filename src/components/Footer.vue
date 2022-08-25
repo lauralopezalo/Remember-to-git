@@ -9,10 +9,7 @@
             class="w-full space-x-12 flex justify-center text-gray-300 sm:w-7/12 md:justify-start"
           >
             <ul class="list-disc list-inside space-y-8">
-              <li>
-                <a href="#" class="hover:text-sky-400 transition">Home</a>
-              </li>
-
+             
               <li>
                 <a href="#" class="hover:text-sky-400 transition">About</a>
               </li>
@@ -83,19 +80,7 @@
                 </a>
               </li>
 
-              <li>
-                <a
-                  href="#"
-                  class="flex items-center space-x-3 hover:text-sky-400 transition"
-                >
-                  <img
-                    class="w-5 h-5"
-                    src="https://c5.patreon.com/external/favicon/favicon.ico?v=69kMELnXkB"
-                    alt="patreon icon"
-                  />
-                  <span>Patreon</span>
-                </a>
-              </li>
+             
               <li>
                 <a
                   href="#"

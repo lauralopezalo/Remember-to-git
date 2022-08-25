@@ -1,29 +1,25 @@
 <template>
-  <div>New Task Component</div>
-  <!-- div que justifica en el centro todo el contenido -->
-  <div class="flex justify-center items-baseline h-full pt-4 sm:p-16">
-    <!-- 2 div que organiza en vertical todos los componentes -->
-    <div
-      class="w-[30rem] h-full m-4 relative py-16 px-14 bg-white shadow-md border-none rounded-3xl"
-    >
-      <div class="w-full mb-12">
-        <!-- Título To Do List e icono -->
-        <div>
-          <h1 class="text-3xl text-gray-800 mb-5 font-bold text-center">
-            Add a new task
-          </h1>
-        </div>
+  <div
+    class="h-screen w-full flex justify-center items-center "
+  >
+    
+      <div class="w-2/3 md:w-2/3 lg:w-5/12 mx-3 md:mx-5 lg:mx-0 shadow-md  rounded flex flex-col items-center bg-white py-16 md:py-8 px-4">
+        <h1 class="text-3xl text-gray-800 mb-5 font-bold font-mono text-center">
+          Add a new task
+        </h1>
 
-        <div class="w-full flex flex-row">
-          <form @submit.prevent="addTask" class="space-y-6">
-            <div>
-              <div class="w-full flex flex-col">
+        <div >
+          <form @submit.prevent="addTask" class="px-3 flex flex-col justify-center items-center w-full gap-3">
+           
+              <div
+                class="px-3 flex flex-col justify-center items-center w-full gap-3"
+              >
                 <input
                   type="text"
                   placeholder="Add a task"
                   v-model="title"
                   maxlength="50"
-                  class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
+                  class="px-4 py-2 w-full rounded border border-gray-300 shadow-sm text-base placeholder-gray-500 placeholder-opacity-50 focus:outline-none focus:border-blue-500 "
                 />
 
                 <input
@@ -32,27 +28,23 @@
                   placeholder="Add a description"
                   v-model="description"
                   maxlength="150"
-                  class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
+                  class="px-4 py-2 w-full rounded border border-gray-300 shadow-sm text-base placeholder-gray-500 placeholder-opacity-50 focus:outline-none focus:border-blue-500"
                 />
               </div>
 
-              <!-- <div class="form-control">
-                <label for="">Set Reminder</label>
-                <input type="checkbox" name="reminder" v-model="reminder" />
-              </div> -->
               <div v-if="showError">{{ errorMsg }}</div>
               <button
                 @click="pushNewTask"
-                class="w-full text-white bg-violet-700 hover:bg-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:shadow-lg font-medium rounded-lg text-sm px-5 py-3 text-center mb-2"
+                class="flex justify-center items-center bg-gray-800 hover:bg-black text-white focus:outline-none focus:ring rounded px-5 py-2 mt-3"
               >
                 Save
               </button>
-            </div>
+          
           </form>
         </div>
       </div>
     </div>
-  </div>
+ 
 </template>
 
 <script setup>
