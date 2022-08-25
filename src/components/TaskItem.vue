@@ -2,80 +2,83 @@
   <div v-if="editForm == false" class="">
     <div
       v-if="is_complete == false"
-      class="bg-white shadow-md rounded-lg p-10 pb-0 grid grid-rows-3 gap-4 min-h-fit sm:h-96 md:h-80 lg:h-96"
+      class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200 hover:scale-105 hover:shadow-xl min-h-fit p-6"
     >
-      <div
-        class="text-xl text-gray-800 font-bold min-h-fit sm:h-24 md:h-24 lg:h-20 bg-blue-300 m-0" 
-      >
-        {{ task.title }}
-      </div>
-      <div
-        class="text-base text-gray-800 font-normal min-h-fit sm:h-40 md:h-30 lg:h-40 bg-blue-300"
-      >
-        {{ task.description }}
-      </div>
-      <div class="flex flex-row justify-evenly items-center h-10 bg-blue-300">
-        <i
-          @click="toggleTask(task.id)"
-          class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl "
-        ></i>
+      <div class="p-5">
+        <div class=" mb-5 font-mono font-bold text-lg h-16">
+          {{ task.title }}
+        </div>
+        <div class="text-medium mb-5 text-gray-700 h-32">
+          {{ task.description }}
+        </div>
+        <div class="flex flex-row justify-evenly items-center">
+          <i
+            @click="toggleTask(task.id)"
+            class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
+          ></i>
 
-        <i
-          @click="editFormValue()"
-          class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
-        ></i>
+          <i
+            @click="editFormValue()"
+            class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
+          ></i>
 
-        <i
-          @click="deleteTask(task.id)"
-          class="fa-regular fa-trash-can text-red-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
-        ></i>
+          <i
+            @click="deleteTask(task.id)"
+            class="fa-regular fa-trash-can text-red-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
+          ></i>
+        </div>
       </div>
     </div>
-    <div v-else class="bg-gray-100 rounded-lg p-12 text-gray-500">
-      <div class="text-xl text-gray-500 font-bold mb-2 line-through">
-        {{ task.title }}
-      </div>
-      <div class="text-base text-gray-400 font-normal line-through">
-        {{ task.description }}
-      </div>
-      <div class="flex flex-row justify-evenly items-center h-10">
-        <i
-          @click="toggleTask(task.id)"
-          class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
-        ></i>
-        <i
-          @click="editFormValue()"
-          class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
-        ></i>
-        <i
-          @click="deleteTask(task.id)"
-          class="fa-regular fa-trash-can text-red-500 mr-4 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
-        ></i>
+    <div
+      v-else
+      class="max-w-sm overflow-hidden rounded-xl bg-gray-200 shadow-md duration-200 hover:scale-105 hover:shadow-xl min-h-fit p-6"
+    >
+      <div class="p-5">
+        <div class="mb-5 font-mono font-bold text-lg line-through h-16">
+          {{ task.title }}
+        </div>
+        <div class="text-medium mb-5 text-gray-700 h-32 line-through">
+          {{ task.description }}
+        </div>
+        <div class="flex flex-row justify-evenly items-center">
+          <span @click="toggleTask(task.id)" class="material-symbols-outlined text-gray-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl">
+autorenew
+</span>
+          
+        </div>
       </div>
     </div>
   </div>
   <div v-if="editForm == true">
-    <div class="w-full flex flex-col">
-      <input
-        type="text"
-        placeholder="Add a task"
-        v-model="newTitle"
-        maxlength="50"
-        class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
-      />
-
-      <input
-        type="text"
-        name="day"
-        placeholder="Add a description"
-        v-model="newDescription"
-        maxlength="150"
-        class="input basis-3/4 mb-6 bg-transparent border-0 border-b-2 rounded-none p-3 focus:outline-none border-b-slate-900 text-gray-900 placeholder:ttext-gray-400 shadow-md"
-      />
-      <i
-        @click="editTask(task.id)"
-        class="fa-solid fa-pen-to-square text-blue-500 cursor-pointer"
-      ></i>
+    <div
+      class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200 hover:scale-105 hover:shadow-xl min-h-fit p-6"
+    >
+      <div class="p-5">
+        <div class="text-medium mb-5 text-gray-700">
+          <input
+            type="text"
+            placeholder= "Edit title"
+            v-model="newTitle"
+            maxlength="50"
+            class="w-full px-4 py-2 input basis-3/4 bg-transparent border border-gray-300 rounded placeholder-opacity-50 focus:outline-none focus:border-black  placeholder-gray-500"
+          />
+        </div>
+        <div class="text-medium text-gray-700 h-40">
+          <input
+            type="text"
+            name="day"
+            placeholder="Edit description"
+            v-model="newDescription"
+            maxlength="150"
+             class="w-full px-4 py-2 input basis-3/4 bg-transparent border border-gray-300 rounded placeholder-opacity-50 focus:outline-none focus:border-black  placeholder-gray-500"
+          />
+        </div>
+        <div class="flex flex-row justify-evenly items-center">
+        <i
+          @click="editTask(task.id)"
+          class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"></i>
+        </div>
+      </div>
     </div>
   </div>
 </template>

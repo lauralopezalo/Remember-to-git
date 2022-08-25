@@ -1,12 +1,12 @@
 <template>
   <div >
     <nav class="navbar w-full bg-white">
-      <div class="container-lg px-0 py-2">
+      <div class="container-lg px-2 py-2">
         <div class="flex w-full items-center">
           <a class="font-mono font-bold text-lg mr-auto ml-0" href="/"
             >Remember to git</a
           >
-          <button @click="signOut" class="font-bold">Sign Out</button>
+          <button @click="signOut" class="font-bold"><i class="fa-solid fa-arrow-right-from-bracket text-xl"></i></button>
         </div>
       </div>
     </nav>

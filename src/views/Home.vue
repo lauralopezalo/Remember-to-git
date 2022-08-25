@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-gradient-to-tr from-gray-100 to-white">
+  <div class="bg-gradient-to-tr from-gray-300 to-gray-100">
     <Nav />
     <NewTask @add-task="addNewTask" />
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-0 sm:px-20 lg:px-5"
     >
       <div class="" v-for="task in taskStore.tasks" :key="task.id">
         <TaskItem :task="task" />
@@ -34,12 +34,5 @@ async function addNewTask(task) {
 </script>
 
 <style>
-.display {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: baseline;
-  align-content: space-evenly;
-}
+
 </style>
