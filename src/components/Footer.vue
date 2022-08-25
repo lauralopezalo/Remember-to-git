@@ -6,7 +6,7 @@
       <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
         <div class="flex flex-wrap items-center justify-between md:flex-nowrap">
           <div
-            class="w-full space-x-12 flex justify-center text-gray-300 sm:w-7/12 md:justify-start"
+            class="w-full space-x-24 flex justify-center text-gray-300 sm:w-7/12 md:justify-start"
           >
             <ul class="list-disc list-inside space-y-8">
               <li>
@@ -103,13 +103,14 @@
             class="w-10/12 m-auto mt-16 space-y-6 text-center sm:text-left sm:w-5/12 sm:mt-auto"
           >
             <p class="block text-gray-300 font-mono font-semibold">
-              Remember, in case of fire: <br /><span class="font-mono"
-                > - git commit <br />-
-                git push <br />- leave the building</span
+              Remember, in case of fire: <br /><span class="font-mono">
+                - git commit <br />- git push <br />- leave the building</span
               >
             </p>
 
-            <p class="block text-gray-300 font-mono font-semibold">Laura López Alonso &copy; 2022</p>
+            <p class="block text-gray-300 font-mono font-semibold">
+              Laura López Alonso &copy; 2022
+            </p>
           </div>
         </div>
       </div>

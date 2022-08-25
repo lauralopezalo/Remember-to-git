@@ -3,7 +3,7 @@
     <Nav />
     <NewTask @add-task="addNewTask" />
     <div
-      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-0 sm:px-20 lg:px-5"
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-0 sm:px-20 lg:px-15"
     >
       <div class="" v-for="task in taskStore.tasks" :key="task.id">
         <TaskItem :task="task" />
