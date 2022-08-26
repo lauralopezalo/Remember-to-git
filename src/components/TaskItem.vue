@@ -1,7 +1,7 @@
 <template>
   <div v-if="editForm == false" class="">
     <div
-      class="max-w-sm overflow-hidden rounded-xl shadow-md duration-200 hover:scale-105 hover:shadow-xl min-h-fit p-6"
+      class="max-w-sm overflow-hidden rounded-xl shadow-md  min-h-fit p-6"
       :class="[task.is_complete ? 'bg-gray-200 text-gray-500' : 'bg-white']"
     >
       <div class="p-5">
@@ -23,17 +23,17 @@
         >
           <i
             @click="toggleTask(task.id)"
-            class="fa-regular fa-circle-check text-green-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
+            class="fa-regular fa-circle-check text-green-500 cursor-pointer duration-200 hover:scale-125 sm:text-xl md:text-2xl lg:text-2xl"
           ></i>
 
           <i
             @click="editFormValue()"
-            class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
+            class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer duration-200 hover:scale-125 sm:text-xl md:text-2xl lg:text-2xl"
           ></i>
 
           <i
             @click="deleteTask(task.id)"
-            class="fa-regular fa-trash-can text-red-500 cursor-pointer sm:text-xl md:text-2xl lg:text-2xl"
+            class="fa-regular fa-trash-can text-red-500 cursor-pointer duration-200 hover:scale-125 sm:text-xl md:text-2xl lg:text-2xl"
           ></i>
         </div>
         <div

@@ -6,7 +6,7 @@
           <a class="font-mono font-bold text-lg mr-auto ml-0" href="/"
             >Remember to git</a
           >
-          <button @click="signOut" class="font-bold"><i class="fa-solid fa-arrow-right-from-bracket text-xl"></i></button>
+          <button @click="signOut" class="font-bold"><i class="fa-solid fa-arrow-right-from-bracket text-xl duration-200 hover:scale-125"></i></button>
         </div>
       </div>
     </nav>

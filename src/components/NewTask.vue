@@ -3,7 +3,7 @@
     class="flex justify-center m-20"
   >
 
-      <div class="w-2/3 md:w-2/3 lg:w-5/12 mx-3 md:mx-5 lg:mx-0 shadow-md rounded-2xl flex flex-col items-center bg-white py-16 md:py-8 px-4 duration-200 hover:scale-105">
+      <div class="w-full md:w-2/3 lg:w-5/12 mx-3 md:mx-5 lg:mx-0 shadow-md rounded-xl flex flex-col items-center bg-white py-16 md:py-8 px-4 duration-200 hover:scale-105">
         <h1 class="text-3xl text-gray-800 mb-5 font-bold font-mono text-center">
           Add a new task
         </h1>
@@ -35,7 +35,7 @@
               <div v-if="showError">{{ errorMsg }}</div>
               <button
                 @click="pushNewTask"
-                class="flex justify-center items-center bg-black duration-200 hover:scale-105 text-white focus:outline-none focus:ring rounded px-5 py-2 mt-3"
+                class="flex justify-center items-center bg-black duration-200 hover:scale-105 text-white focus:outline-none focus:ring ring-purple-300 rounded w-32 py-2 mt-3 font-mono"
               >
                 Save
               </button>

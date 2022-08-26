@@ -6,18 +6,18 @@
       <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
         <div class="flex flex-wrap items-center justify-between md:flex-nowrap">
           <div
-            class="w-full space-x-24 flex justify-center text-gray-300 sm:w-7/12 md:justify-start"
+            class="w-full space-x-16 flex justify-center text-gray-300 sm:w-7/12 md:justify-start"
           >
             <ul class="list-disc list-inside space-y-8">
               <li>
-                <a href="#" class="hover:text-sky-400 transition">About</a>
+                <a href="#" class="hover:text-purple-400 transition">About</a>
               </li>
 
               <li>
-                <a href="#" class="hover:text-sky-400 transition">Contact</a>
+                <a href="#" class="hover:text-purple-400 transition">Contact</a>
               </li>
               <li>
-                <a href="#" class="hover:text-sky-400 transition"
+                <a href="#" class="hover:text-purple-400 transition"
                   >Privacy Policy</a
                 >
               </li>
@@ -27,7 +27,7 @@
               <li>
                 <a
                   href="#"
-                  class="flex items-center space-x-3 hover:text-sky-400 transition"
+                  class="flex items-center space-x-3 hover:text-purple-400 transition"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@
               <li>
                 <a
                   href="#"
-                  class="flex items-center space-x-3 hover:text-sky-400 transition"
+                  class="flex items-center space-x-3 hover:text-purple-400 transition"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@
               <li>
                 <a
                   href="#"
-                  class="flex items-center space-x-3 hover:text-sky-400 transition"
+                  class="flex items-center space-x-3 hover:text-purple-400 transition"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@
               <li>
                 <a
                   href="#"
-                  class="flex items-center space-x-3 hover:text-sky-400 transition"
+                  class="flex items-center space-x-3 hover:text-purple-400 transition"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
