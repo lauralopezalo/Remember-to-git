@@ -1,24 +1,19 @@
 <template>
   <div
-    class="h-screen w-full flex justify-center items-center bg-gradient-to-tr from-gray-100 to-white"
+    class="h-screen w-full flex justify-center items-center bg-gradient-to-tr from-gray-300 to-gray-100"
   >
     <div
       class="w-full md:w-9/12 lg:w-2/3 mx-3 md:mx-5 lg:mx-0 shadow-lg flex flex-col sm:flex-row items-center rounded-2xl z-10 overflow-hidden bg-black"
     >
       <div
-        class="w-full md:w-1/2 flex flex-col items-center bg-white py-5 md:py-8 px-4"
+        class="w-full sm:h-96 md:w-1/2 flex flex-col items-center bg-white py-20 sm:py-5 md:py-8 px-5"
       >
-        <h3
-          class="mt-3 mb-5 font-bold text-3xl flex items-center text-black font-mono"
-        >
-          SIGN UP
-        </h3>
         <div v-if="errorMsg" class="mb-6">
           <p class="text-lg font-medium text-red-500">{{ errorMsg }}</p>
         </div>
         <form
           @submit.prevent="signUp"
-          class="px-3 flex flex-col justify-center items-center w-full gap-3"
+          class="px-3 flex flex-col justify-center items-center w-full gap-10 md:gap-3"
         >
           <div class="w-full flex flex-col">
             <label
@@ -62,7 +57,7 @@
               class="px-4 py-2 w-full rounded border border-gray-300 shadow-sm text-base placeholder-gray-500 placeholder-opacity-50 focus:outline-none focus:border-black"
             />
           </div>
-          <div>
+          <div class="mt-8 sm:mt-0">
             <button
               class="flex justify-center items-center bg-black duration-200 hover:scale-105 text-white focus:outline-none focus:ring ring-purple-300 rounded w-32 py-2 mt-3 font-mono"
               name="commit"
@@ -84,14 +79,14 @@
         </form>
       </div>
       <div class="hidden w-full md:w-1/2 sm:block ">
-        <div>
+        <div class="flex flex-col justify-end h-72 px-10">
           <h1
-            class="text-3xl sm:text-3xl md:text-4xl font-mono font-extrabold text-white my-2 md:my-0 p-4 sm:p-10 md:pb-0"
+            class="text-3xl sm:text-3xl lg:text-4xl font-mono font-extrabold text-white py-10"
           >
-            Remember to git
+            Sign up 
           </h1>
-          <h3 class="mb-2 text-white font-mono p-10 pb-0">
-            Sign up for free and say hello to your new organized life.
+          <h3 class="mb-2 text-white sm:block font-mono ">
+            And say hello to your new organized life.
           </h3>
         </div>
       </div>
