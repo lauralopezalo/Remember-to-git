@@ -1,6 +1,8 @@
 <template>
   <footer
-    class="relative mt-20 py-20 flex flex-col items-center bg-black overflow-hidden md:py-32"
+    class="relative bg-cover mt-20 py-20 flex flex-col items-center bg-black overflow-hidden md:py-32"
+    style="background-image: url(https://images.unsplash.com/photo-1551225183-94acb7d595b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80)"
+  
   >
     <div class="relative z-[1] container m-auto px-6 md:px-12">
       <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
@@ -115,12 +117,13 @@
         </div>
       </div>
     </div>
-    <div aria-hidden="true" class="absolute h-full inset-0 flex items-center">
+    <!-- <div aria-hidden="true" class="absolute h-full inset-0 flex items-center">
       <div
         aria-hidden="true"
         class="bg-layers bg-scale w-56 h-56 m-auto blur-xl bg-gradient-to-r from-gray-700 via-gray-800 to-black rounded-full md:w-[30rem] md:h-[30rem] md:blur-3xl"
+        
       ></div>
-    </div>
+    </div> -->
     <div
       aria-hidden="true"
       class="absolute inset-0 w-full h-full bg-[#020314] opacity-80"

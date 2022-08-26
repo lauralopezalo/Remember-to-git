@@ -13,40 +13,39 @@
         </div>
         <div
           class="text-medium mb-5 text-gray-700 h-32"
-          :class="[task.is_complete ? 'line-through' : '']"
+          :class="[task.is_complete ? 'line-through text-gray-500' : '']"
         >
           {{ task.description }}
         </div>
         <div
           class="flex flex-row justify-evenly items-center"
-          :class="[task.is_complete ? 'hidden' : '']"
+          
         >
           <i
             @click="toggleTask(task.id)"
+            :class="[task.is_complete ? 'hidden' : '']"
             class="fa-regular fa-circle-check text-green-500 cursor-pointer duration-200 hover:scale-125 sm:text-xl md:text-2xl lg:text-2xl"
           ></i>
 
           <i
             @click="editFormValue()"
+            :class="[task.is_complete ? 'hidden' : '']"
             class="fa-regular fa-pen-to-square text-blue-500 cursor-pointer duration-200 hover:scale-125 sm:text-xl md:text-2xl lg:text-2xl"
           ></i>
-
-          <i
-            @click="deleteTask(task.id)"
-            class="fa-regular fa-trash-can text-red-500 cursor-pointer duration-200 hover:scale-125 sm:text-xl md:text-2xl lg:text-2xl"
-          ></i>
-        </div>
-        <div
-          class="flex flex-row justify-evenly items-center"
-          :class="[task.is_complete ? '' : 'hidden']"
-        >
-          <span
+<span
             @click="toggleTask(task.id)"
-            class="material-symbols-outlined text-gray-500 cursor-pointer sm:text-xl md:text-2xl lg:text-3xl"
+            :class="[task.is_complete ? '' : 'hidden']"
+            class="material-symbols-outlined text-gray-500 cursor-pointer duration-200 hover:scale-125 sm:text-2xl md:text-3xl lg:text-3xl"
           >
             autorenew
           </span>
+          <i
+            @click="deleteTask(task.id)"
+            :class="[task.is_complete ? 'text-gray-500' : '']"
+            class="fa-regular fa-trash-can text-red-500 cursor-pointer duration-200 hover:scale-125 sm:text-xl md:text-2xl lg:text-2xl"
+          ></i>
         </div>
+        
       </div>
     </div>
   </div>

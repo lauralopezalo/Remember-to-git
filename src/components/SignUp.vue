@@ -1,9 +1,10 @@
 <template>
   <div
-    class="h-screen w-full flex justify-center items-center bg-gradient-to-tr from-gray-300 to-gray-100"
+    class="h-screen bg-cover flex justify-center items-center bg-gradient-to-tr from-gray-300 to-gray-100"
+    style="background-image: url(https://images.unsplash.com/photo-1551225183-94acb7d595b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80)"
   >
     <div
-      class="w-full md:w-9/12 lg:w-2/3 mx-3 md:mx-5 lg:mx-0 shadow-lg flex flex-col sm:flex-row items-center rounded-2xl z-10 overflow-hidden bg-black"
+      class="w-full sm:w-10/12 max-w-3xl mx-3 md:mx-5 lg:mx-0 shadow-lg flex flex-col sm:flex-row items-center rounded-2xl z-10 overflow-hidden bg-black"
     >
       <div
         class="w-full sm:h-96 md:w-1/2 flex flex-col items-center bg-white py-20 sm:py-5 md:py-8 px-5"
@@ -13,7 +14,7 @@
         </div>
         <form
           @submit.prevent="signUp"
-          class="px-3 flex flex-col justify-center items-center w-full gap-10 md:gap-3"
+          class="px-3 flex flex-col justify-center items-center w-full gap-10 sm:gap-3"
         >
           <div class="w-full flex flex-col">
             <label

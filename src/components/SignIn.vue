@@ -11,10 +11,12 @@
   </div>
 
   <div
-    class="h-screen w-full flex justify-center items-center bg-gradient-to-tr from-gray-300 to-gray-100"
+    class="h-screen bg-cover flex justify-center items-center bg-gradient-to-tr from-gray-300 to-gray-100"
+    style="background-image: url(https://images.unsplash.com/photo-1551225183-94acb7d595b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80)"
+
   >
     <div
-      class="w-full md:w-9/12 lg:w-2/3 mx-3 md:mx-5 lg:mx-0 shadow-lg flex flex-col sm:flex-row items-center rounded-2xl z-10 overflow-hidden bg-black"
+      class="w-full sm:w-10/12 max-w-3xl mx-3 md:mx-5 lg:mx-0 shadow-lg flex flex-col sm:flex-row items-center rounded-2xl z-10 overflow-hidden bg-black"
     >
       <div class="hidden w-full md:w-1/2 sm:block">
         <div class="flex flex-col justify-end h-72 px-10">
@@ -33,13 +35,13 @@
         class="w-full sm:h-96 md:w-1/2 flex flex-col items-center bg-white py-20 sm:py-5 md:py-8 px-5"
       >
         <h3
-          class="mt-6 mb-16 md:mb-5 font-bold text-3xl flex items-center text-black font-mono"
+          class="mt-6 mb-16 sm:mb-5 font-bold text-3xl flex items-center text-black font-mono"
         >
           LOGIN
         </h3>
         <form
           @submit.prevent="signIn"
-          class="px-3 flex flex-col justify-center items-center w-full gap-10 md:gap-3"
+          class="px-3 flex flex-col justify-center items-center w-full gap-10 sm:gap-3"
         >
           <div class="w-full flex flex-col">
             <label
