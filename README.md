@@ -1,36 +1,41 @@
-# To-do App
+# Remember to git
 
 This final project running on Vue 3 with the composition API, Pinia as a state management tool, vue router, vite and lastly Supabase running on the backend.
 
-CSS frameworks as liking like tailwindCSS, Bootstrap, MaterialUI will be used.
+CSS framework TailwindCSS will be used.
+
+This app is deploy to Vercels ecosystem.
 
 ## Project time management
 
 **18/08**
 - Kick off
 - Read documentation and resources
-- Git init
 
 **19/08**
 - Review and clarify concepts
 - Outline the design of the app and the content
 
 **22/08**
-- Log In, Sign Up and Log out. Html, style and functionality
+- Log In, Sign Up and Log out: html, style and functionality
 
 **23/08**
 - Add and fetch tasks
-- 
+- Remove and edit tasks
 
 **24/08**
+- Tailwind tasks items, add task, 
+- Toggle task state
 
-## Important
-This app is not setUp to be deployed to a production environment like vercel or netlify. 
+**25/08**
+- Implement filter for completed/to-do tasks
+- Footer and Nav Bar: html, style and functionality
 
-Friday on August 19 we will look at how can we deploy this app to Vercels ecosystem.
+**26/08**
+- Latest Style Settings
+- Prepare presentation
 
-
-## Project Setup
+<!-- ## Project Setup
 
 ```sh
 npm install
@@ -54,6 +59,6 @@ npm run dev
 
 ```sh
 npm run build
-```
+``` -->
 
 
