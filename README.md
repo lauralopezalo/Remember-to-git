@@ -1,6 +1,6 @@
 # Remember to git
 
-This final project running on Vue 3 with the composition API, Pinia as a state management tool, vue router, vite and lastly Supabase running on the backend.
+A "to-do list" application running on Vue 3 with the composition API, Pinia as a state management tool, vue router, vite and lastly Supabase running on the backend.
 
 CSS framework TailwindCSS will be used.
 
