@@ -1,7 +1,7 @@
 <template>
   <div >
-    <nav class="navbar w-full bg-white">
-      <div class="container-lg px-2 py-2">
+    <nav class="rounded-b-lg w-full bg-white">
+      <div class="container-lg px-5 pt-3 pb-4">
         <div class="flex w-full items-center">
           <a class="font-mono font-bold text-lg mr-auto ml-0" href="/"
             >Remember to git</a

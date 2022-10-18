@@ -1,9 +1,6 @@
 <template>
   <footer
-    class="relative bg-cover mt-20 py-20 flex flex-col items-center bg-black overflow-hidden md:py-32"
-    style="background-image: url(https://images.unsplash.com/photo-1551225183-94acb7d595b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80)"
-  
-  >
+    class="relative bg-cover mt-20 py-20 flex flex-col items-center bg-black overflow-hidden md:py-32">
     <div class="relative z-[1] container m-auto px-6 md:px-12">
       <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
         <div class="flex flex-wrap items-center justify-between md:flex-nowrap">
