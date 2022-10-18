@@ -44,7 +44,7 @@
               Sign up
             </h1>
             <h3 class="mb-2 text-white sm:block font-mono ">
-              And say hello to your new organized life.
+              And INIT your new organized life.
             </h3>
           </div>
         </div>

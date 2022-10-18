@@ -21,7 +21,7 @@
               Remember to git
             </h1>
             <h3 class="mb-2 text-white sm:block font-mono">
-              Organize your life and your work with a single and simple tool.
+              COMMIT your daily tasks, and PUSH yourself further.
             </h3>
           </div>
         </div>
