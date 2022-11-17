@@ -6,35 +6,6 @@ CSS framework TailwindCSS will be used.
 
 This app is deploy to Vercels ecosystem.
 
-## Project time management
-
-**18/08**
-- Kick off
-- Read documentation and resources
-
-**19/08**
-- Review and clarify concepts
-- Outline the design of the app and the content
-
-**22/08**
-- Log In, Sign Up and Log out: html, style and functionality
-
-**23/08**
-- Add and fetch tasks
-- Remove and edit tasks
-
-**24/08**
-- Tailwind tasks items, add task, 
-- Toggle task state
-
-**25/08**
-- Implement filter for completed/to-do tasks
-- Footer and Nav Bar: html, style and functionality
-
-**26/08**
-- Latest Style Settings
-- Prepare presentation
-
 <!-- ## Project Setup
 
 ```sh
