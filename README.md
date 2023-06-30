@@ -6,7 +6,19 @@ CSS framework TailwindCSS will be used.
 
 This app is deploy to Vercels ecosystem.
 
-<!-- ## Project Setup
+[Sign up](https://remember-to-git.vercel.app/auth/sign-up) and INIT your new organized life!
+
+
+![image](https://github.com/lauralopezalo/Remember-to-git/assets/109240574/33343aa4-ec90-4489-923c-5dbf178b4b05)
+
+![image](https://github.com/lauralopezalo/Remember-to-git/assets/109240574/2bc42710-93f4-4fd4-8c36-ff7c6a2932d2)
+
+
+---
+
+
+
+## Project Setup
 
 ```sh
 npm install
@@ -30,6 +42,6 @@ npm run dev
 
 ```sh
 npm run build
-``` -->
+```
 
 
